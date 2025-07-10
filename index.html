@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Riii 🎉</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #ffe6f0, #fff0f5);
+      font-family: 'Pacifico', cursive;
+      overflow-x: hidden;
+      text-align: center;
+      color: #ff1493;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-top: 40px;
+      animation: sparkle 2s infinite alternate;
+    }
+
+    .section {
+      padding: 30px 20px;
+    }
+
+    .photo {
+      margin: 20px auto;
+      max-width: 280px;
+      animation: zoomIn 1s ease-in-out;
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #ffb6c1;
+    }
+
+    .caption {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #cc0066;
+    }
+
+    /* Animations */
+    @keyframes sparkle {
+      0% { text-shadow: 0 0 5px pink; }
+      100% { text-shadow: 0 0 20px hotpink; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: #ff69b4;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 6s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #555;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 30px; }
+      .caption { font-size: 15px; }
+    }
+  </style>
+</head>
+
+<body onload="startConfetti();">
+
+  <!-- Floating Balloons -->
+  <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="balloon" style="left: 30%; animation-delay: 2s; background:#ffccff;"></div>
+  <div class="balloon" style="left: 50%; animation-delay: 4s;"></div>
+  <div class="balloon" style="left: 70%; animation-delay: 1s; background:#ffc0cb;"></div>
+  <div class="balloon" style="left: 90%; animation-delay: 3s;"></div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1>🎉 Happy Birthday Riii 🎉</h1>
+
+  <div class="section">
+    <p>To the prettiest, funniest, most irritating bestfriend I never asked for 😜</p>
+
+    <div class="photo">
+      <img src="photo1.jpg" alt="Riii Pic 1" />
+      <div class="caption">Main cute, tu filter = Perfect combo</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo2.jpg" alt="Riii Pic 2" />
+      <div class="caption">Ye hasi... kuch toh planning chal rahi hai 💀</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo3.jpg" alt="Riii Pic 3" />
+      <div class="caption">Tere bina zindagi boring hoti... aur peaceful bhi 😈</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo4.jpg" alt="Riii Pic 4" />
+      <div class="caption">Smile queen + Drama queen = Riii 😅</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo5.jpg" alt="Riii Pic 5" />
+      <div class="caption">Tere bina zindagi boring hoti... aur peaceful bhi 😈</div>
+    </div>
+  </div>
+
+  <footer>From: Krish 💖</footer>
+
+  <!-- Confetti on load -->
+  <script>
+    function startConfetti() {
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+
+</body>
+</html>
